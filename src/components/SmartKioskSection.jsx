@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAssetUrl } from '../data/nexoData';
 import {
   Globe2,
   Mic,
@@ -13,6 +14,7 @@ import {
 } from 'lucide-react';
 
 export default function SmartKioskSection({ onOpenImageModal }) {
+  const kioskImgUrl = getAssetUrl('/assets/demo/nexo-smart-kiosk.png');
   const kioskFeatures = [
     {
       title: "Multilingual conversational interface",
@@ -144,7 +146,7 @@ export default function SmartKioskSection({ onOpenImageModal }) {
 
             {/* Click to Zoom Pill */}
             <div
-              onClick={() => onOpenImageModal && onOpenImageModal('/assets/demo/nexo-smart-kiosk.png', 'NEXO Smart Kiosk — Assisted Rural Service Point')}
+              onClick={() => onOpenImageModal && onOpenImageModal(kioskImgUrl, 'NEXO Smart Kiosk — Assisted Rural Service Point')}
               style={{
                 position: 'absolute',
                 top: '28px',
@@ -180,10 +182,10 @@ export default function SmartKioskSection({ onOpenImageModal }) {
                 paddingBottom: '10px',
                 cursor: 'pointer'
               }}
-              onClick={() => onOpenImageModal && onOpenImageModal('/assets/demo/nexo-smart-kiosk.png', 'NEXO Smart Kiosk — Assisted Rural Service Point')}
+              onClick={() => onOpenImageModal && onOpenImageModal(kioskImgUrl, 'NEXO Smart Kiosk — Assisted Rural Service Point')}
             >
               <img
-                src="/assets/demo/nexo-smart-kiosk.png"
+                src={kioskImgUrl}
                 alt="NEXO Smart Kiosk with Touchscreen, Camera, Voice Interface and Thermal Receipt Printer"
                 style={{
                   maxHeight: '580px',

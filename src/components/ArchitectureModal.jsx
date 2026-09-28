@@ -1,8 +1,10 @@
 import React from 'react';
+import { getAssetUrl } from '../data/nexoData';
 import { X, ExternalLink, Download, Layers, ShieldCheck } from 'lucide-react';
 
 export default function ArchitectureModal({ isOpen, onClose }) {
   if (!isOpen) return null;
+  const archImgUrl = getAssetUrl('/assets/demo/technical-approach-kiosk.png');
 
   return (
     <div
@@ -97,7 +99,7 @@ export default function ArchitectureModal({ isOpen, onClose }) {
             }}
           >
             <img
-              src="/assets/demo/technical-approach-kiosk.png"
+              src={archImgUrl}
               alt="Technical Approach SIH 2026 Architecture"
               style={{
                 width: '100%',

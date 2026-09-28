@@ -15,6 +15,12 @@ export const BRAND = {
   badge: "Verified SIH 2026 Innovation Platform"
 };
 
+export const getAssetUrl = (path) => {
+  const base = import.meta.env?.BASE_URL || '/';
+  const clean = path.replace(/^\//, '');
+  return `${base.endsWith('/') ? base : base + '/'}${clean}`;
+};
+
 export const NAVIGATION_LINKS = [
   { name: "Home", href: "#hero" },
   { name: "Problem", href: "#problem" },
@@ -190,7 +196,7 @@ export const HARDWARE_ITEMS = [
     name: "Raspberry Pi / Edge Computer",
     role: "Central Compute & Local Inference Engine",
     category: "COMPUTE",
-    image: "/assets/hardware/rospbeery.jpg",
+    image: getAssetUrl("/assets/hardware/rospbeery.jpg"),
     description: "Drives the kiosk OS, orchestrates peripheral devices, runs local microservices, and hosts offline vector cache."
   },
   {
@@ -198,7 +204,7 @@ export const HARDWARE_ITEMS = [
     name: "Touch Display",
     role: "Citizen Interactive Interface",
     category: "USER INTERFACE",
-    image: "/assets/hardware/disply.jpg",
+    image: getAssetUrl("/assets/hardware/disply.jpg"),
     description: "Large, high-contrast touchscreen optimized for outdoor ambient lighting and intuitive touch navigation."
   },
   {
@@ -206,7 +212,7 @@ export const HARDWARE_ITEMS = [
     name: "Document & Identity Camera",
     role: "Physical Document Scanning & Verification",
     category: "USER INTERFACE",
-    image: "/assets/hardware/camera.jpg",
+    image: getAssetUrl("/assets/hardware/camera.jpg"),
     description: "Captures land records, Aadhaar cards, or passbooks for on-device OCR and document readiness validation."
   },
   {
@@ -214,7 +220,7 @@ export const HARDWARE_ITEMS = [
     name: "High-Sensitivity Microphone",
     role: "Multilingual Voice Input",
     category: "USER INTERFACE",
-    image: "/assets/hardware/mic.jpg",
+    image: getAssetUrl("/assets/hardware/mic.jpg"),
     description: "Directional microphone with ambient noise cancellation to clearly record rural dialect queries in busy cooperative halls."
   },
   {
@@ -222,7 +228,7 @@ export const HARDWARE_ITEMS = [
     name: "Loud Audio Speaker",
     role: "Voice Response & Accessibility TTS",
     category: "USER INTERFACE",
-    image: "/assets/hardware/speake.jpg",
+    image: getAssetUrl("/assets/hardware/speake.jpg"),
     description: "Ensures elderly and non-literate citizens can listen to audible guidance in their mother tongue with clarity."
   },
   {
@@ -230,7 +236,7 @@ export const HARDWARE_ITEMS = [
     name: "Wi-Fi / 4G Connectivity Module",
     role: "Cloud Sync & API Access",
     category: "CONNECTIVITY",
-    image: "/assets/hardware/wifi.jpg",
+    image: getAssetUrl("/assets/hardware/wifi.jpg"),
     description: "Industrial 4G/LTE cellular modem with fallback Wi-Fi antenna to maintain sync with cloud Supabase and government portals."
   },
   {
@@ -238,7 +244,7 @@ export const HARDWARE_ITEMS = [
     name: "Thermal Receipt Printer",
     role: "Document Checklist & Token Dispatch",
     category: "DOCUMENT SERVICE",
-    image: "/assets/hardware/images.jpg",
+    image: getAssetUrl("/assets/hardware/images.jpg"),
     description: "Instantly prints tangible physical slips containing required document checklists, eligibility summaries, and tracking barcodes."
   },
   {
@@ -246,7 +252,7 @@ export const HARDWARE_ITEMS = [
     name: "UPS / Power Backup System",
     role: "Uninterruptible Power Supply",
     category: "POWER",
-    image: "/assets/hardware/battery.jpg",
+    image: getAssetUrl("/assets/hardware/battery.jpg"),
     description: "Guarantees continuous uptime during rural voltage fluctuations and periodic local load-shedding."
   },
   {
@@ -254,7 +260,7 @@ export const HARDWARE_ITEMS = [
     name: "High-Speed SSD / SD Card Storage",
     role: "Internal Storage & Offline Knowledge Repository",
     category: "STORAGE",
-    image: "/assets/hardware/sd.jpg",
+    image: getAssetUrl("/assets/hardware/sd.jpg"),
     description: "High-endurance flash storage containing cached scheme documents, offline linguistic dictionaries, and vector stores."
   }
 ];
@@ -327,37 +333,37 @@ export const TEAM_MEMBERS = [
   {
     name: "Akshaya Kumaran P",
     role: "Team Leader & Cloud Solution Architect",
-    image: "/assets/team/akshaya-kumaran.png",
+    image: getAssetUrl("/assets/team/akshaya-kumaran.png"),
     focus: "Cloud infrastructure, system architecture, Supabase backend orchestration, and team coordination."
   },
   {
     name: "Rathnadeepa V M",
     role: "OCR Developer",
-    image: "/assets/team/rathnadeepa.png",
+    image: getAssetUrl("/assets/team/rathnadeepa.png"),
     focus: "PyMuPDF document extraction, Tesseract OCR for multilingual scanned government notices."
   },
   {
     name: "Deepiga M",
     role: "AI / NLP Developer",
-    image: "/assets/team/deepiga.png",
+    image: getAssetUrl("/assets/team/deepiga.png"),
     focus: "Natural language understanding, query intent classification, and linguistic tokenization."
   },
   {
     name: "Hari Prasath J",
     role: "Frontend Developer",
-    image: "/assets/team/hari-prasath.png",
+    image: getAssetUrl("/assets/team/hari-prasath.png"),
     focus: "Responsive enterprise UI, accessible touch interface, and multilingual user experience design."
   },
   {
     name: "Madhan R",
     role: "AI & RAG Architect",
-    image: "/assets/team/madhan.png",
+    image: getAssetUrl("/assets/team/madhan.png"),
     focus: "RAG pipeline, Sentence Transformers, FAISS vector indexing, and Neo4j Knowledge Graph integration."
   },
   {
     name: "Hariharan S",
     role: "Backend Developer",
-    image: "/assets/team/hariharan.png",
+    image: getAssetUrl("/assets/team/hariharan.png"),
     focus: "FastAPI microservices, source crawlers, API routing, and data integrity verification."
   }
 ];
@@ -367,14 +373,14 @@ export const MENTORS = [
     name: "Muthusamy",
     role: "Head – Technical Competitions and Hackathons",
     institution: "Rathinam Technical Campus",
-    image: "/assets/mentors/muthusamy.png",
+    image: getAssetUrl("/assets/mentors/muthusamy.png"),
     description: "Guidance on technical strategy, innovation architecture, competition readiness, and engineering execution."
   },
   {
     name: "Gajendran Parthasarathi",
     role: "Head – School of Design and Innovation",
     institution: "Rathinam Technical Campus",
-    image: "/assets/mentors/gajendran.png",
+    image: getAssetUrl("/assets/mentors/gajendran.png"),
     description: "Product design mentorship, user-centric human-machine interaction, and rural accessibility principles."
   }
 ];
